@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Be Vietnam Pro", sans-serif;
+  letter-spacing: -0.2px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+header {
+  height: 196px;
+  background-color: #F8FAFC;
+  background-image: url("./img/sand-background-image.png");
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #E5E7EB;
+}
+header .text {
+  width: 444px;
+}
+header h2 {
+  color: #121826;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+header p {
+  color: #4D5562;
+}
+
+.pricing-tbl {
+  max-width: 1136px;
+  margin-top: 84px;
+  border-collapse: collapse;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 214px repeat(4, 220px);
+}
+.pricing-tbl .blank, .pricing-tbl .perk {
+  grid-column: 1;
+}
+.pricing-tbl .free {
+  grid-column: 2;
+}
+.pricing-tbl .team {
+  grid-column: 3;
+}
+.pricing-tbl .popular {
+  grid-column: 4;
+}
+.pricing-tbl .enterprise {
+  grid-column: 5;
+}
+.pricing-tbl thead, .pricing-tbl tbody, .pricing-tbl tr {
+  display: contents;
+}
+.pricing-tbl thead tr {
+  grid-row: 1;
+}
+.pricing-tbl td {
+  border-bottom: 1px solid rgba(77, 85, 98, 0.1);
+}
+
+thead th {
+  height: 189px;
+  vertical-align: top;
+}
+thead th span, thead th h1 {
+  display: block;
+}
+thead th span {
+  color: #3662E3;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+thead th h1 {
+  font-size: 64px;
+  margin-bottom: 6px;
+}
+thead th p {
+  color: #4D5562;
+  font-weight: 400;
+}
+
+tbody td:not(.perk) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.perk {
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+td.perk {
+  background-color: #F8FAFC;
+}
+
+th.blank, td.blank {
+  width: 214px;
+}
+
+th.popular {
+  position: relative;
+}
+th.popular::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: 24px;
+  background-color: #121826;
+  z-index: -1;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+th.popular span {
+  width: 86px;
+  background-color: #3662E3;
+  margin-left: 69px;
+  border: 1px solid #3662E3;
+  border-radius: 25px;
+  padding: 2px 12px;
+  margin-bottom: 8px;
+}
+
+tbody tr:first-child .perk {
+  border-top-left-radius: 16px;
+}
+
+tbody tr:nth-last-child(2) .perk {
+  border-bottom-left-radius: 16px;
+  border-bottom: none;
+  box-shadow: 0 1px 0 #E5E7EB;
+}
+
+td.links {
+  border-bottom: none;
+  height: 72px;
+}
+
+a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+.popular {
+  background-color: #121826;
+  color: white;
+}
+.popular span, .popular p {
+  color: white;
+}
+.popular a {
+  color: white;
+}
+
+tbody tr:last-child .popular {
+  background-color: #E9A23B;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+@media (max-width: 1136px) {
+  .pricing-tbl {
+    max-width: 920px;
+    grid-template-columns: 214px repeat(3, 220px);
+  }
+  .pricing-tbl .free {
+    display: none;
+  }
+  .pricing-tbl .team {
+    grid-column: 2;
+  }
+  .pricing-tbl .popular {
+    grid-column: 3;
+  }
+  .pricing-tbl .enterprise {
+    grid-column: 4;
+  }
+}
+@media (max-width: 920px) {
+  .pricing-tbl {
+    display: grid;
+    max-width: 576px;
+    grid-template-columns: 120px repeat(2, 220px);
+    grid-template-rows: 189px;
+    gap: 0;
+    height: auto;
+  }
+  .pricing-tbl td.blank, .pricing-tbl tr.blank, .pricing-tbl th.blank {
+    width: 120px;
+  }
+  .pricing-tbl .blank, .pricing-tbl .perk {
+    grid-column: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .pricing-tbl .free, .pricing-tbl .team {
+    display: none;
+  }
+  .pricing-tbl .popular {
+    grid-column: 3;
+  }
+  .pricing-tbl .enterprise {
+    grid-column: 2;
+  }
+  .pricing-tbl th {
+    grid-row: 1;
+  }
+  .pricing-tbl #row1 {
+    grid-row: 2;
+  }
+  .pricing-tbl #row2 {
+    grid-row: 3;
+  }
+  .pricing-tbl #row3 {
+    grid-row: 4;
+  }
+  .pricing-tbl #row4 {
+    grid-row: 5;
+  }
+  .pricing-tbl #row5 {
+    grid-row: 6;
+  }
+  .pricing-tbl #row6 {
+    grid-row: 7;
+  }
+  .pricing-tbl #row7 {
+    grid-row: 8;
+  }
+  .pricing-tbl #row8 {
+    grid-row: 9;
+  }
+  .pricing-tbl .links {
+    grid-row: 10;
+  }
+}/*# sourceMappingURL=style.css.map */
